@@ -1,6 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../../context';
 
+interface IEntry {
+  name: string;
+  currentValue: number;
+  annualDeposits: number;
+  interestRate: number;
+  years: number;
+}
+
 const defaultEntry = {
   name: '',
   currentValue: 0,
@@ -11,7 +19,7 @@ const defaultEntry = {
 
 const NewEntry = () => {
   const { addEntry } = useContext(AppContext);
-  const [data, setData] = useState<any>(defaultEntry);
+  const [data, setData] = useState<IEntry>(defaultEntry);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -27,6 +35,7 @@ const NewEntry = () => {
       <p>Name of Investment</p>
       <input
         name='name'
+        type='text'
         className='investment_new_entry_input'
         value={data.name}
         onChange={(e) => handleChange(e)}
@@ -36,6 +45,7 @@ const NewEntry = () => {
           <p>Current Value (SGD)</p>
           <input
             name='currentValue'
+            type='number'
             className='investment_new_entry_input'
             value={data.currentValue}
             onChange={(e) => handleChange(e)}
@@ -45,6 +55,7 @@ const NewEntry = () => {
           <p>Annual Deposits (SGD)</p>
           <input
             name='annualDeposits'
+            type='number'
             className='investment_new_entry_input'
             value={data.annualDeposits}
             onChange={(e) => handleChange(e)}
@@ -57,6 +68,7 @@ const NewEntry = () => {
           <p>Annual Interest Rate</p>
           <input
             name='interestRate'
+            type='number'
             className='investment_new_entry_input'
             value={data.interestRate}
             onChange={(e) => handleChange(e)}
@@ -66,6 +78,7 @@ const NewEntry = () => {
           <p>Duration (years)</p>
           <input
             name='years'
+            type='number'
             className='investment_new_entry_input'
             value={data.years}
             onChange={(e) => handleChange(e)}
