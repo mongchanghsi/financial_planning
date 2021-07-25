@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './styles/main.scss';
+import Header from './components/Header';
+import Graph from './components/Graph';
+import InvestmentForm from './components/InvestmentForm';
+import { AppContextProvider } from './context';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContextProvider>
+      <div className='App'>
+        <Header />
+        <div className='home_grid'>
+          <div className='home_list'>
+            <h2 className='home_subtitle'>Portfolio</h2>
+            <InvestmentForm />
+          </div>
+
+          <div className='home_graph'>
+            <h2 className='home_subtitle'>Prediction</h2>
+            <Graph />
+          </div>
+        </div>
+      </div>
+    </AppContextProvider>
   );
-}
+};
 
 export default App;

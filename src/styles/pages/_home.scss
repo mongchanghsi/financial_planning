@@ -1,0 +1,34 @@
+.home {
+  &_grid {
+    display: grid;
+    // border: solid white;
+    border-width: 0.3rem;
+    border-radius: 0.5rem;
+    grid-template-columns: 30vw 1fr;
+    background-color: white;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    align-items: baseline;
+  }
+
+  &_list {
+    display: block;
+    padding: 1rem;
+  }
+
+  &_graph {
+    display: block;
+    padding: 1rem;
+    overflow: auto;
+  }
+
+  &_subtitle {
+    font-size: 2rem;
+    background: -webkit-linear-gradient(left, #1bfcff, #3286fd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+  }
+}

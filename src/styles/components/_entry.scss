@@ -1,0 +1,89 @@
+.investment {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &_header {
+    display: grid;
+    grid-template-columns: 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 1fr;
+    padding: 1rem;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+
+  &_entries_container {
+    border: solid lightgrey;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+  }
+
+  &_entries_container-inner {
+    height: 50vh;
+    overflow-y: auto;
+    list-style-type: disc;
+  }
+
+  &_entry {
+    display: grid;
+    border: solid lightgrey;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+    grid-template-columns: 4.5vw 4.5vw 4.5vw 4.5vw 4.5vw 1fr;
+    padding: 1rem;
+    align-items: center;
+    margin: 1rem;
+
+    &_deletebutton {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      padding-top: 0.5rem;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+    }
+
+    &_deletebutton svg {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    &-text {
+      word-wrap: break-word;
+    }
+  }
+
+  &_new_entry {
+    &_container {
+      border: solid lightgrey;
+      border-width: 0.1rem;
+      border-radius: 0.5rem;
+    }
+
+    &_input {
+      padding: 0.3rem;
+      width: 70%;
+    }
+
+    &_button {
+      padding: 0.1rem;
+      margin: 0.3rem;
+      color: white;
+      background: -webkit-linear-gradient(left, #1bfcff, #3286fd);
+      border: none;
+      border-radius: 0.5rem;
+      width: 10vw;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 50% 1fr;
+      padding: 0.3rem;
+    }
+  }
+}
